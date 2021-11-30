@@ -1,0 +1,21 @@
+<div class="container main-content bg-success p-2 text-dark bg-opacity-10">
+    <h3 class="btn-bar">Login</h3>
+    <form [formGroup]="loginData">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="username" formControlName="username" class="form-control" ngModel required />
+        </div><br>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control" ngModel required />
+        </div><br><br>
+        <div class="form-group btn-bar">
+            <button (click)="loginUser()" class="btn btn-secondary">
+                Login
+            </button> &nbsp;&nbsp;&nbsp;
+            <button routerLink="/register" class="btn btn-secondary">
+                Register
+            </button>
+        </div>
+    </form>
+</div>

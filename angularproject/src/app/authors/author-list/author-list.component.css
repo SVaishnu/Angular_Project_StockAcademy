@@ -1,0 +1,21 @@
+ .main-content{
+    margin-top: 90px;
+    
+    }
+    .btn-bar {
+        text-align: center;
+    } 
+
+  .btn-right{
+      float: right;
+  }
+    
+    td.a{
+        white-space: nowrap;
+        text-overflow:ellipsis;
+        overflow: hidden;
+        max-width:10px;
+    }
+    td.a:hover{
+        overflow: visible;
+    }

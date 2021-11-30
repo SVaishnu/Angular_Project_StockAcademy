@@ -1,0 +1,45 @@
+<div class="container main-content bg-success p-2 text-dark bg-opacity-10 main-table">
+    <div class="btn-right">
+        <button (click)='refresh()' class="btn btn-secondary">
+            ADD SPONSOR
+        </button>
+    </div>
+    <div class="btn-back">
+        <button class="btn btn-secondary">
+            <a routerLink="/home">
+                <i class="fa fa-arrow-left" style="font-size:25px;color:rgb(176, 223, 172);"></i>
+            </a>
+        </button>
+    </div>  
+
+    <h2 class="btn-bar">Sponsors List</h2>
+    <table class="table table-striped  table-success table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Sponsors Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Icon</th>
+          <th></th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let items of collection let i=index">
+          <td>{{i + 1}}</td>
+          <td>{{items.name}}</td>
+          <td>{{items.description}}</td>
+          <td>{{items.icon}}</td>
+  
+          <td>{{items.type}}</td>
+          <td><i class="fa fa-trash" (click)="deleteSponsor(items._id)"
+            style="font-size:25px;color:rgb(15, 13, 13);"></i>
+            &nbsp;&nbsp;
+            <a routerLink="/sponsor/update/{{items._id}}"> 
+              <i class="fa fa-edit" style="font-size:25px;color:rgb(15, 13, 13);"></i>
+             </a> 
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

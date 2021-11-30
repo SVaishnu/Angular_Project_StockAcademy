@@ -1,0 +1,49 @@
+<div class="container main-content bg-success p-2 text-dark bg-opacity-10 main-form ">
+    <div class="btn-back">
+        <button (click)='refresh()' class="btn btn-secondary">
+            <i class="fa fa-arrow-left" style="font-size:25px;color:rgb(176, 223, 172);"></i>
+        </button>
+    </div><br>
+    <div>
+        <h3 *ngIf='chngform' class="btn-bar">Add Subject</h3>
+        <h3 *ngIf='!chngform' class="btn-bar">Update Subject</h3>
+        <form [formGroup]="addSubject">
+            <div class="form-group">
+                <label for="subjectname">SubjectName</label>
+                <input type="displayName" formControlName="displayName" class="form-control"  required />
+            </div><br>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="description" formControlName="description" class="form-control" 
+                    required></textarea>
+            </div><br>
+            <div class="form-group">
+                <label for="deploymentStatus">DeploymentStatus</label>
+                <input type="text" formControlName="deploymentStatus" class="form-control"  required />
+            </div><br>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <input type="text" formControlName="type" class="form-control"  required />
+            </div><br>
+            <div class="form-group" *ngIf='chngform'>
+                <label for="icon">Icon</label>
+                <input type="text" formControlName="icon" class="form-control" />
+                <!-- <input type="file" (change)="getimage($event)" formControlName="icon" class="form-control" /> -->
+            </div><br>
+            <!-- <div class="form-check form-switch">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Active</label>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                formControlName="active">
+        </div><br> -->
+            <div class="form-group btn-bar" *ngIf='chngform'>
+                <button (click)='saveSubject()' class="btn btn-secondary">
+                    Add Subject
+                </button> &nbsp;&nbsp;&nbsp;
+            </div>
+            <div *ngIf='!chngform' class="form-group btn-bar">
+                <button (click)='update()' type=" submit" class="btn btn-secondary">Update Subject</button> &nbsp;&nbsp;
+                <button (click)='cancle()' type=" submit" class="btn btn-secondary">Cancle</button>
+            </div>
+        </form>
+    </div>
+</div>

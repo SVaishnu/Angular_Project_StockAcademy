@@ -1,0 +1,15 @@
+.main-text{
+color:black
+}
+.btn-bar{
+    text-align: center;
+    float: left;
+}
+.list{
+display: block;
+}
+
+ul li a:hover, ul li a:focus {
+    color:#829797;
+    text-decoration: underline;
+   }

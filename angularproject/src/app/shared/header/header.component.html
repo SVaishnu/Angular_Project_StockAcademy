@@ -1,0 +1,58 @@
+<div>
+    <div *ngIf='!Loginservice.authenticate'>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link">Welcome In stocksAcademy...</a>
+            </div>
+        </nav>
+    </div>
+    <div *ngIf='Loginservice.authenticate'>
+        <nav class="navbar navbar-expand-sm navbar navbar-dark bg-dark" aria-label="Seventh navbar example">
+            <div class="container-fluid ">
+                <a class="navbar-brand">Welcome {{Loginservice.username}} !</a><br>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto mb-2 mb-xs-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" routerLink="/lesson/lessontype">Lesson</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" routerLink="/subject/Subjectlist">Subject</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" routerLink="/authors/list">Author</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" routerLink="/chapters/list">Chapter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" routerLink="/sponsor/list">Sponsor</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Subject
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" routerLink="/subject/Addsubject">Add Subject</a></li>
+                            <li><a class="dropdown-item" routerLink="/subject/Subjectlist">View Subject</a></li>
+                        </ul>
+                    </li> -->
+                    </ul>
+                    <ul class="navbar-nav ml auto">
+                        <li class="nav-item pointer">
+                            <button (click)='logOut()' class="nav-link btn btn-secondary">Logout</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

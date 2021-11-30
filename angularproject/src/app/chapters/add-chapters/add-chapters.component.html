@@ -1,0 +1,51 @@
+<div class="btn-back">
+    <div>
+        <button (click)='refresh()' class="btn btn-secondary">
+          <i class="fa fa-arrow-left" style="font-size:25px;color:rgb(176, 223, 172);"></i>
+        </button>
+      </div>
+    
+  <div class="container main-content bg-success p-2 text-dark bg-opacity-10">
+    <h3 *ngIf='chngform' class="btn-bar"> Add Chapter</h3>
+    <h3 *ngIf='!chngform' class="btn-bar">Update Chapter</h3>
+        <form [formGroup]="addChapter" class="row g-3 needs-validation" >
+      <div class="formGroup col-md-12">
+        <label for="displayName" class="form-label">Display Name</label>
+        <input type="text" class="form-control" formControlName="displayName">
+      </div>
+      <div class="formGroup col-md-12">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" formControlName="description">
+      </div>
+
+      <div class="formGroup col-md-12">
+        <label for="deploymentStatus" class="form-label">Deployment Status</label>
+        <input type="text" class="form-control" formControlName="deploymentStatus">
+      </div>
+      <div class="form-group">
+        <label>Partner</label>
+        <select class="form-control" formControlName="partnerID">
+            <option value="partner._id">Select Partner</option>
+            <option [value]='partner._id' *ngFor="let partner of partnerlist">{{partner.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Subject</label>
+        <select class="form-control"  formControlName="subjectID">
+            <option value="subject._id">Select subject</option>
+            <option  [value]='subject._id' *ngFor="let subject of subjectlist">{{subject.displayName}}</option>
+        </select>
+    </div>
+      
+      <div class="form-group btn-bar" *ngIf='chngform'>
+        <button (click)='collectChapter()' class="btn btn-secondary">
+            Add Chapter
+        </button> &nbsp;&nbsp;&nbsp;
+    </div>
+    <div *ngIf='!chngform' class="form-group btn-bar">
+        <button (click)='update()' type=" submit" class="btn btn-secondary">Update Chapter</button> &nbsp;&nbsp;
+       <button (click)='cancle()' type=" submit" class="btn btn-secondary">Cancle</button> 
+    </div>
+    </form>
+
+  </div>

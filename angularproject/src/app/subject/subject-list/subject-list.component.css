@@ -1,0 +1,9 @@
+td.a{
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    max-width:10px;
+}
+td.a:hover{
+    overflow: visible;
+}
