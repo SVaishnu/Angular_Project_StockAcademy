@@ -7,7 +7,6 @@ const routes: Routes = [
   {
     path: 'Addsubject', component: AddSubjectComponent,
   },
-
   {
     path: 'Subjectlist', component: SubjectListComponent
   },
@@ -15,8 +14,6 @@ const routes: Routes = [
     path: 'update/:id', component: AddSubjectComponent
   }
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
