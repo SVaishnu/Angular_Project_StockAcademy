@@ -7,6 +7,7 @@ const routes: Routes = [
   {
     path: 'Addsubject', component: AddSubjectComponent,
   },
+
   {
     path: 'Subjectlist', component: SubjectListComponent
   },
